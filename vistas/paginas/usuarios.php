@@ -42,6 +42,45 @@
                                 </thead>
                                 <tbody>
 
+                                    <?php
+                                    foreach ($usuarios as $key => $usuario) { ?>
+
+                                        <tr>
+                                            <td><?= $key + 1 ?></td>
+                                            <td><?= $usuario['nombre'] ?></td>
+                                            <td><?= $usuario['usuario'] ?></td>
+                                            <td>
+
+                                                <img src="<?= HTTP . $usuario['foto'] ?>" alt="" height="40px" width="40px" class="img-circle" alt="User Image">
+
+                                            </td>
+                                            <td><?= $usuario['rol'] ?></td>
+                                            <td>
+                                                <div class="btn-group">
+
+                                                    <button class="btn btn-warning btn-sm">
+                                                        <i class="fas fa-pencil-alt text-white">Editar</i>
+                                                    </button>
+                                                    <button class="btn btn-danger btn-sm">
+                                                        <i class="fas fa-pencil-alt text-white">Eliminar</i>
+                                                    </button>
+                                                </div>
+
+
+                                            </td>
+
+                                        </tr>
+
+
+
+
+
+
+                                    <?php
+                                    }
+                                    ?>
+
+
                                 </tbody>
 
 
@@ -74,23 +113,23 @@
             <div class="modal-header">
                 <h4 class="alert alert-success alert-dismissible">Agregar Nuevo Usuario</h4>
             </div>
-            <form method="post" enctype="multipart/form-data ">
+            <form method="post" enctype="multipart/form-data">
 
                 <div class="from-group has-feedback" bis_skin_checked="1">
-                <label for="nombre_perfil" class="col-form-label mt-2">Nombre Perfil</label>
-                    <input type="text" name="nombre_perfil" id="" class="form-control" placeholder="Nombre">
+                    <label for="nombre_perfil" class="col-form-label mt-2">Nombre Perfil</label>
+                    <input type="text" name="usuario_perfil" id="" class="form-control" placeholder="Nombre">
                     <span class="glyphicon glyphicon-user form-control-feedback"></span>
                 </div>
 
                 <div class="from-group has-feedback" bis_skin_checked="1">
-                <label for="nombre_perfil" class="col-form-label mt-4">Usuario</label>
-                    <input type="text" name="nombre_usuario" id="" class="form-control" placeholder="Usuario">
+                    <label for="nombre_perfil" class="col-form-label mt-4">Usuario</label>
+                    <input type="text" name="usuario_usuario" id="" class="form-control" placeholder="Usuario">
                     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                 </div>
 
                 <div class="from-group has-feedback" bis_skin_checked="1">
-                <label for="nombre_perfil" class="col-form-label mt-2">Contraseña</label>
-                    <input type="text" name="password_" id="" class="form-control" placeholder="pasword">
+                    <label for="nombre_perfil" class="col-form-label mt-2">Contraseña</label>
+                    <input type="text" name="usuario_password" id="" class="form-control" placeholder="pasword">
                     <span class="glyphicon glyphicon-eye-close form-control-feedback"></span>
                 </div>
 
@@ -98,10 +137,10 @@
                 <div class="from-group has-feedback" bis_skin_checked="1">
 
                     <div class="btn btn-default btn-file" bis_skin_checked="1">
-                        <i class="fas fa-paperclip"></i>Adjuntar imagen de perfil
-                        <input type="file" name="subirImagenPerfil">
+                        <i class="fa-solid fa-imagen"></i>Adjuntar imagen de usuario
+                        <input type="file" name="subirImagenusuarios">
                     </div>
-                    <img class="previsualizarImagenPerfil img-fluid py-2" width='200' height='200'>
+                    <img class="preisualizarImgusuarios img-fluid py-2" width='200' height='200'>
                     <p class="help-block small">Dimensiones : 480px * 382 ! Peso Max 2 mb ! Formato: jpg o png</p>
 
 
@@ -110,26 +149,26 @@
 
                 <div class="form-group has-feedback">
                     <label for="">Rol</label>
-                    <select name="cat_user" id="" class="form-control" requiered>
+                    <select name="usuario_rol" id="" class="form-control" requiered>
 
-                    <?php
-                    foreach($roles as $ct){
-?>
-                        <option value="<?php echo $ct['id_roles'] ?>"><?php echo $ct['nombre_rol'] ?></option>
-                <?php    
-                }
-                    ?>
-                       
+                     
+
+                        <option value="1">admin</option>
+                        <option value="2">operador</option>
+
                     </select>
-              
+
 
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Cerrar</button>
                     <button type="submit" class="btn btn-primary">Guardar</button>
                 </div>
-                
+                <?php
+                $guardarUsuarios = new ctrUsuarios();
+                $guardarUsuarios->ctrGuardarUsuario();
 
+                ?>
 
             </form>
         </div>

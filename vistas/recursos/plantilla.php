@@ -1,6 +1,6 @@
 <?php
 $usuarios = ctrUsuarios::ctrMostarUsuarios();
-var_dump($usuarios);
+
 
 ?>
 
@@ -26,10 +26,12 @@ var_dump($usuarios);
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="<?php echo  HTTP . "vistas/recursos/dist/css/skins/_all-skins.min.css" ?>">
+  <!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+  <script src="<?php echo HTTP . "vistas/recursos/dist/js/sweetAlert.js" ?>"></script>
 
 
   <!-- Google Font -->
-  <link rel="stylesheet" href="ROOTs://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
@@ -278,6 +280,10 @@ var_dump($usuarios);
   <!-- AdminLTE for demo purposes -->
   <script src="<?php echo HTTP . "vistas/recursos/dist/js/demo.js" ?>"></script>
 
+  
+  <script src="<?php echo HTTP . "vistas/recursos/dist/js/usuarios.js" ?>"></script>
+  
+  
   <script>
     $(document).ready(function() {
       $('.sidebar-menu').tree()
