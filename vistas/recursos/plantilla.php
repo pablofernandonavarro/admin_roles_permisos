@@ -28,7 +28,7 @@ $usuarios = ctrUsuarios::ctrMostarUsuarios();
   <link rel="stylesheet" href="<?php echo  HTTP . "vistas/recursos/dist/css/skins/_all-skins.min.css" ?>">
   <!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
   <script src="<?php echo HTTP . "vistas/recursos/dist/js/sweetAlert.js" ?>"></script>
-
+  <link rel="stylesheet" href="<?php echo HTTP .  "vistas/recursos/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css"?>">
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
@@ -280,8 +280,14 @@ $usuarios = ctrUsuarios::ctrMostarUsuarios();
   <!-- AdminLTE for demo purposes -->
   <script src="<?php echo HTTP . "vistas/recursos/dist/js/demo.js" ?>"></script>
 
+
   
-  <script src="<?php echo HTTP . "vistas/recursos/dist/js/usuarios.js" ?>"></script>
+  <script src="<?php echo HTTP ."vistas/recursos/bower_components/datatables.net/js/jquery.dataTables.min.js"?>"></script>
+
+<script src="<?php echo HTTP ."vistas/recursos/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"?>"></script>
+
+  
+  <script src="<?php echo HTTP . "vistas/recursos/dist/js/usuarios.js" ?>"></script> 
   
   
   <script>

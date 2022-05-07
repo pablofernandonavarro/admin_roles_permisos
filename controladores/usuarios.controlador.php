@@ -10,6 +10,17 @@ class ctrUsuarios
         return $respuesta;
     }
 
+
+    static public function ctrMostarUsuariosuno($item,$valor)
+    {
+        $tabla = "usuarios";
+        $respuesta = mdlUsuarios::mdlMostarUsuariosuno($tabla,$item,$valor);
+       
+        return $respuesta;
+    }
+
+
+
     static public function ctrGuardarUsuario()
     {  
 
@@ -74,6 +85,7 @@ class ctrUsuarios
                 
                 $datos=array(
                     'usuario_usuario'=>$_POST['usuario_usuario'],
+                    'usuario_perfil' => $_POST['usuario_perfil'],
                     'usuario_nombre'=>$_POST['usuario_perfil'],
                     'usuario_password'=>$encriptarPassword,
                     'usuario_rol'=>$_POST['usuario_rol'],
@@ -123,6 +135,12 @@ class ctrUsuarios
 
             }
         }
+    }
+
+    static public function ctrEditarUsuario(){
+
+
+
     }
 }
 
